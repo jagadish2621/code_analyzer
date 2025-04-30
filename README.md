@@ -21,8 +21,7 @@ Features:
 Setup Instructions:
 -------------------
 1. Clone the repo and navigate to the folder:
-   git clone https://github.com/your-username/sakila-code-analyzer
-   cd code_analyzer
+   git clone https://github.com/jagadish2621/code_analyzer.git
 
 2. Create and activate a virtual environment:
    python -m venv venv
