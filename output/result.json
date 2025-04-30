@@ -1,0 +1,556 @@
+{
+  "project_overview": [],
+  "files": [
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\SakilaProjectApplication.java",
+  "functions": [
+    {
+      "Overview": "The provided code is a simple entry point for a Spring Boot application called 'SakilaProject'. It contains the minimal configuration necessary to start the application. The `SpringApplication` class from the Spring Boot library is used to bootstrap and run the application with the provided main class, `SakilaProjectApplication`.",
+      "Key Functions/Methods": [
+        {
+          "Name": "main",
+          "Parameters": [
+            "args"
+          ],
+          "Return Value": "void"
+        },
+        {
+          "Name": "SpringApplication.run",
+          "Parameters": [
+            "SakilaProjectApplication.class, args"
+          ],
+          "Return Value": "void"
+        }
+      ],
+      "Complexity or Noteworthy Patterns": "The code does not show any complex algorithms or patterns. It follows the standard structure for a Spring Boot application."
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\test\\java\\com\\sparta\\engineering72\\sakilaproject\\SakilaProjectApplicationTests.java",
+  "functions": [
+    {
+      "Overview": "This Java code is a test class named 'SakilaProjectApplicationTests' in the package 'com.sparta.engineering72.sakilaproject'. It tests the methods of the MainController class by creating an instance, executing the respective methods and verifying their returned values.",
+      "Key Functions/Methods": [
+        {
+          "Name": "MainController.home",
+          "Parameters": null,
+          "Return Value": "String"
+        },
+        {
+          "Name": "MainController.account",
+          "Parameters": null,
+          "Return Value": "String"
+        },
+        {
+          "Name": "MainController.login",
+          "Parameters": null,
+          "Return Value": "String"
+        }
+      ],
+      "Complexity or Noteworthy Patterns": "The code uses the JUnit 5 Test annotation '@Test', and the Assertions library for comparing test results with expected values. It also demonstrates the use of a simple Controller class."
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\ActorController.java",
+  "functions": [
+    {
+      "error": "Invalid JSON from model",
+      "raw_output": " {\n      \"Overview\": \"This Java code is a controller for managing actors in an application, specifically in the Sakila project. It uses Spring MVC framework and dependency injection via @Autowired annotation to interact with ActorService layer. The main function is to fetch actors based on given first name, last name or both, and display them using Thymeleaf template named 'actors/actors'.\",\n      \"Key Functions/Methods\": [\n         {\n            \"Name\": \"ActorController()\",\n            \"Parameters\": \"(FilmService filmService, ActorService actorService)\",\n            \"Return Value\": \"None\"\n         },\n         {\n            \"Name\": \"getActors(ModelMap modelMap, String firstNameFilter, String lastNameFilter)\",\n            \"Parameters\": \"[ModelMap modelMap, String firstNameFilter (defaults to 'ALL ACTORS'), String lastNameFilter (defaults to 'ALL ACTORS')]\",\n            \"Return Value\": \"String (returns the view name 'actors/actors')\"\n         }\n      ],\n      \"Complexity or Noteworthy Patterns\": [\n         \"- Use of Spring MVC framework for web application development.\",\n         \"- Dependency Injection using @Autowired annotation.\",\n         \"- Conditional logic to fetch actors based on first name, last name or both.\",\n         \"- Thymeleaf is used as the view resolver for rendering HTML templates.\n      ]\n   }"
+    },
+    {
+      "Overview": "This code is a part of a Spring MVC application that handles the GET request at the '/actors/details' endpoint and retrieves the details of an actor along with their films. It uses dependency injection for service classes: `actorService` and `filmService`.",
+      "Functions/Methods": [
+        {
+          "Name": "getActorFilmDetails",
+          "Parameters": [
+            "ModelMap modelMap, @RequestParam(value = 'id') Integer id"
+          ],
+          "Return Value": "String"
+        },
+        {
+          "Name": "findActorById",
+          "Parameters": [
+            "Integer id"
+          ],
+          "Return Value": "Actor"
+        },
+        {
+          "Name": "getActorFullNameFromID",
+          "Parameters": [
+            "Integer id"
+          ],
+          "Return Value": "String"
+        }
+      ],
+      "Complexity or Noteworthy Patterns": [
+        "The code uses Dependency Injection (DI) for service classes, as can be seen through the use of `actorService` and `filmService`. This promotes loose coupling and improves testability.",
+        "The `getActorFilmDetails()` method uses a `ModelMap` object to store and pass multiple attributes (actor's name and films) to the view, avoiding excessive function parameters."
+      ]
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\CategoryController.java",
+  "functions": [
+    {
+      "error": "Invalid JSON from model",
+      "raw_output": " Here is the analysis of your provided code:\n\n```json\n{\n  \"Overview\": \"This Java code defines a controller class named `CategoryController`. It uses Spring framework to handle HTTP requests related to managing categories in a hypothetical Sakila project. The class has methods for retrieving all categories, displaying the details of a specific category along with its associated films.\",\n\n  \"Key Functions/Methods\": [\n    {\n      \"Name\": \"CategoryController()\",\n      \"Parameters\": \"(FilmService filmService, CategoryService categoryService)\",\n      \"Return Value\": \"None\"\n    },\n    {\n      \"Name\": \"getCategories(ModelMap modelMap)\",\n      \"Parameters\": \"(ModelMap modelMap)\",\n      \"Return Value\": \"String\"\n    },\n    {\n      \"Name\": \"getCategoryDetails(ModelMap modelMap, @RequestParam(value = \\\"id\\\") Integer id)\",\n      \"Parameters\": \"(ModelMap modelMap, Integer id)\",\n      \"Return Value\": \"String\"\n    },\n    {\n      \"Name\": \"getCategoryById(Integer id)\",\n      \"Parameters\": \"(Integer id)\",\n      \"Return Value\": \"Category\"\n    }\n  ],\n\n  \"Complexity or Noteworthy Patterns\": [\n    \"The code uses Spring framework annotations such as `@Controller` and `@Autowired`.\",\n    \"It makes use of the ModelMap object to pass data between the controller and the view.\",\n    \"It employs dependency injection through the constructor-based setup provided by Spring.\"\n  ]\n}\n```\nIn this code, you can see that it has a few methods for handling GET requests related to categories. The main functions are `getCategories()` which returns all categories and `getCategoryDetails()` which retrieves details of a specific category along with its associated films. Additionally, there is a helper method `getCategoryById(Integer id)` for getting a category by its ID."
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\MainController.java",
+  "functions": [
+    {
+      "Overview": "This code defines a controller class named `MainController` in the package `com.sparta.engineering72.sakilaproject.controller`. The class is annotated as a Spring Controller using `@Controller`. It contains three methods, each of which maps to a specific URL path and returns a corresponding JSP page (view) when accessed.",
+      "Functions/Methods": [
+        {
+          "Name": "home()",
+          "Parameters": "None",
+          "Return Value": "String - 'home'"
+        },
+        {
+          "Name": "login()",
+          "Parameters": "None",
+          "Return Value": "String - 'login'"
+        },
+        {
+          "Name": "account()",
+          "Parameters": "None",
+          "Return Value": "String - 'account'"
+        }
+      ],
+      "Complexity/Noteworthy Patterns": [
+        "The code follows the standard Spring MVC controller pattern, with each method annotated using `@RequestMapping` to map to a specific URL path.",
+        "No complex algorithms or patterns are observed in this simple example."
+      ]
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\StaffController.java",
+  "functions": [
+    {
+      "Overview": "The provided code defines a `StaffController` class that is annotated as a Spring Controller. It interacts with the StaffService, CustomerService, and InventoryService to handle requests for the '/owner' route. This controller retrieves staff information based on the current user, counts the number of customers and inventory items, and passes these values to a view named '/owner/owner'.",
+      "Key Functions/Methods": [
+        {
+          "Name": "StaffController constructor",
+          "Parameters": [
+            "StaffService staffService",
+            "CustomerService customerService",
+            "InventoryService inventoryService"
+          ],
+          "Return Value": "None (Sets instance variables)"
+        },
+        {
+          "Name": "@GetMapping(\"/owner\")",
+          "Parameters": [
+            "ModelMap modelMap",
+            "HttpServletRequest request"
+          ],
+          "Return Value": "String (The view name to render)"
+        }
+      ],
+      "Complexity or Noteworthy Patterns": [
+        "Use of Spring's @Autowired annotation for dependency injection.",
+        "Interaction with multiple services for data retrieval and manipulation.",
+        "Data aggregation within the controller before passing it to a view."
+      ]
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\CustomerController.java",
+  "functions": [
+    {
+      "error": "Invalid JSON from model",
+      "raw_output": " Here is the analysis of the provided code:\n\n```json\n{\n  \"Overview\": \"This Java class, named `CustomerController`, appears to be a controller for managing customer-related operations in a web application built using Spring Boot. It uses various services like CustomerService, RentalService, InventoryService, and FilmService for interacting with the database.\",\n\n  \"Key Functions/Methods\": [\n    {\n      \"Name\": \"CustomerController\",\n      \"Parameters\": \"(None)\",\n      \"Return Value\": \"(No explicit return value, but the class extends Controller which suggests it implicitly returns a View or ResponseEntity)\"\n    },\n    {\n      \"Name\": \"CustomerController\",\n      \"Parameters\": \"[customerService, rentalService, inventoryService, filmService]\",\n      \"Constructor Parameters\": \"{CustomerService, RentalService, InventoryService, FilmService}\",\n      \"Return Value\": \"(Implicit return value, see the previous entry)\"\n    },\n    {\n      \"Name\": \"addCustomer\",\n      \"Parameters\": [\"customer\"],\n      \"Return Value\": \"(Implicit return value, see the first entry)\"\n    },\n    {\n      \"Name\": \"updateCustomer\",\n      \"Parameters\": [\"customer\"],\n      \"Return Value\": \"(Implicit return value, see the first entry)\"\n    },\n    {\n      \"Name\": \"deleteCustomer\",\n      \"Parameters\": [\"customerId\"],\n      \"Return Value\": \"(Implicit return value, see the first entry)\"\n    },\n    {\n      \"Name\": \"listCustomers\",\n      \"Parameters\": [\"pageable\"],\n      \"Return Value\": \"[List<Customer>]\"\n    }\n  ],\n\n  \"Complexity or noteworthy patterns\": [\n    \"The code uses Spring's @Controller and @Autowired annotations for dependency injection.\",\n    \"It uses the Model and ModelMap to pass data to the view, suggesting it follows a Model-View-Controller (MVC) pattern.\",\n    \"LocalDate, Timestamp, and Instant classes are used for handling date and time values.\"\n  ]\n}\n```"
+    },
+    {
+      "error": "Invalid JSON from model",
+      "raw_output": " Here is the analysis of the provided code:\n\n```json\n{\n  \"Overview\": \"The provided code contains two methods annotated with @GetMapping in a Spring MVC application. The first method, '/customer', returns the current user's information along with their orders. The second method, '/owner/customers', allows filtering of customers by either first name or last name and returns the filtered list.\",\n\n  \"Key Functions/Methods\": [\n    {\n      \"Name\": \"currentUser\",\n      \"Parameters\": [\"ModelMap modelMap, HttpServletRequest request\"],\n      \"Return Value\": \"String\"\n    },\n    {\n      \"Name\": \"getCustomers\",\n      \"Parameters\": [\"ModelMap modelMap, @RequestParam(value = 'firstName', defaultValue = 'ALL CUSTOMERS') String firstNameFilter, @RequestParam(value = 'lastName', defaultValue = 'ALL CUSTOMERS') String lastNameFilter\"],\n      \"Return Value\": \"String\"\n    }\n  ],\n\n  \"Complexity or Noteworthy Patterns\": [\n    \"The code uses Spring MVC's @GetMapping annotation for handling HTTP GET requests.\",\n    \"It employs service classes (customerService, rentalService, inventoryService, filmService) for business logic.\",\n    \"Data manipulation and populating model attributes are done within the methods.\"\n  ]\n}\n```"
+    },
+    {
+      "Overview": "The given code is a part of a Spring MVC application, managing customers and their rental history. It defines two methods: one for displaying the list of all customers (GET /owner/customers) and another for showing the rental history of a specific customer (GET /owner/view/customers/{id}).",
+      "Functions/Methods": [
+        {
+          "Name": "modelMap.addAttribute",
+          "Parameters": [
+            "String key, Object value"
+          ],
+          "Return Value": "None"
+        },
+        {
+          "Name": "customerService.getAllCustomers()",
+          "Parameters": [],
+          "Return Value": "List<Customer>"
+        },
+        {
+          "Name": "customerService.getCustomerByID(int id)",
+          "Parameters": [
+            "int id"
+          ],
+          "Return Value": "Customer"
+        },
+        {
+          "Name": "rentalService.getRentalsByCustomer(int id)",
+          "Parameters": [
+            "int id"
+          ],
+          "Return Value": "List<Rental>"
+        }
+      ],
+      "Complexity or Noteworthy Patterns": [
+        "The first method retrieves the list of all customers and the list of customers associated with their rentals. It uses multiple service classes (customerService, rentalService, inventoryService, filmService) to fetch required data.",
+        "Both methods use Spring's ModelMap to store attributes that will be passed to the view."
+      ]
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\Actor.java",
+  "functions": [
+    {
+      "Overview": "The given code is a Java entity class named 'Actor'. This class represents an actor in the context of the Sakila project and is annotated as an Entity. The class has four properties: actorId, firstName, lastName, and lastUpdate. The actorId property serves as the primary key, while the other three properties represent the first name, last name, and last update timestamp of an actor respectively.",
+      "Key Functions/Methods": [
+        {
+          "Function Name": "getActorId()",
+          "Parameters": null,
+          "Return Value": "int"
+        },
+        {
+          "Function Name": "setActorId(int)",
+          "Parameters": "int",
+          "Return Value": null
+        },
+        {
+          "Function Name": "getFirstName()",
+          "Parameters": null,
+          "Return Value": "String"
+        },
+        {
+          "Function Name": "setFirstName(String)",
+          "Parameters": "String",
+          "Return Value": null
+        },
+        {
+          "Function Name": "getLastName()",
+          "Parameters": null,
+          "Return Value": "String"
+        },
+        {
+          "Function Name": "setLastName(String)",
+          "Parameters": "String",
+          "Return Value": null
+        },
+        {
+          "Function Name": "getLastUpdate()",
+          "Parameters": null,
+          "Return Value": "Timestamp"
+        },
+        {
+          "Function Name": "setLastUpdate(Timestamp)",
+          "Parameters": "Timestamp",
+          "Return Value": null
+        },
+        {
+          "Function Name": "equals(Object)",
+          "Parameters": "Object",
+          "Return Value": "boolean"
+        },
+        {
+          "Function Name": "hashCode()",
+          "Parameters": null,
+          "Return Value": "int"
+        }
+      ],
+      "Complexity or Noteworthy Patterns": "This code follows the JavaBean pattern for the properties and equals/hashCode methods. It uses JPA (Java Persistence API) annotations to map the class with a database table."
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\Category.java",
+  "functions": [
+    {
+      "error": "Invalid JSON from model",
+      "raw_output": " Here is the analysis of the provided Java code:\n\n```json\n{\n  \"Overview\": \"This is a Java Entity class named Category that represents a database table in the Sakila Project. It has three attributes (categoryId, name, and lastUpdate) and provides getter and setter methods for each attribute.\",\n\n  \"Key Functions/Methods\": [\n    {\n      \"Name\": \"getCategoryId\",\n      \"Parameters\": null,\n      \"Return Value\": \"int\"\n    },\n    {\n      \"Name\": \"setCategoryId\",\n      \"Parameters\": \"int categoryId\",\n      \"Return Value\": null\n    },\n    {\n      \"Name\": \"getName\",\n      \"Parameters\": null,\n      \"Return Value\": \"String\"\n    },\n    {\n      \"Name\": \"setName\",\n      \"Parameters\": \"String name\",\n      \"Return Value\": null\n    },\n    {\n      \"Name\": \"getLastUpdate\",\n      \"Parameters\": null,\n      \"Return Value\": \"Timestamp\"\n    },\n    {\n      \"Name\": \"setLastUpdate\",\n      \"Parameters\": \"Timestamp lastUpdate\",\n      \"Return Value\": null\n    },\n    {\n      \"Name\": \"equals\",\n      \"Parameters\": \"Object o\",\n      \"Return Value\": \"boolean\"\n    },\n    {\n      \"Name\": \"hashCode\",\n      \"Parameters\": null,\n      \"Return Value\": \"int\"\n    }\n  ],\n\n  \"Complexity or Noteworthy Patterns\": [\n    \"The code uses the @Entity and @Id annotations from JPA (Java Persistence API) to map this class with a database table and to identify the primary key.\",\n    \"The equals() method checks for equality by comparing instance variables, which is common in object-oriented programming.\"\n  ]\n}\n```\nThis code does not perform any complex operations. It simply defines a Java Entity Class named Category, which represents a row in the database table. The class has three attributes (categoryId, name, and lastUpdate) with getter and setter methods for each attribute. The class also overrides the equals() method and hashCode() method for comparing and generating hash codes of objects, respectively."
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\FilmController.java",
+  "functions": [
+    {
+      "error": "Invalid JSON from model",
+      "raw_output": " Here is the analysis of the provided code:\n\n1. Overview: This code defines a `FilmController` class in the `com.sparta.engineering72.sakilaproject.controller` package. The class is annotated with `@Controller`, indicating it's a Spring MVC controller, and relies on various other classes such as `FilmService`, `InventoryService`, `RentalService`, and `CustomerService`. It seems to manage the CRUD (Create, Read, Update, Delete) operations related to the `Film` entity.\n\n2. Key Functions/Methods:\n   - The class has no explicit methods defined within it. Instead, it depends on the Spring-injected services and their respective methods. Some of these methods may include:\n     - `filmService.createFilm()`, `filmService.updateFilm()`, `filmService.deleteFilm()`, and `filmService.findAllFilms()` to manage the lifecycle of Film entities.\n     - Similar methods for the other entities (Customer, Inventory, Rental) through their respective services.\n   - The constructor `public FilmController(...)` is used to inject instances of the services via Spring's autowiring mechanism.\n\n3. Complexity or noteworthy patterns:\n   - The code makes use of Spring MVC and dependency injection, which are common in Java web applications.\n   - It uses the `@Autowired` annotation to automatically manage the lifecycle of its service instances.\n   - It also employs the JPA CriteriaBuilder API for querying the database in a type-safe manner.\n   - The class makes use of various types from the Java standard library, such as `Timestamp`, `LocalDateTime`, and `LocalDate`. These are often used for handling date/time values in Java applications.\n   - The code uses Spring's Model and ModelMap classes to manage the data that will be rendered in the view."
+    },
+    {
+      "Overview": "This code defines two RESTful API endpoints for a web application, handling requests related to films. The first endpoint at '/films' returns a list of all films or filters the list based on the provided title parameter. The second endpoint at '/films/details' retrieves the details of a specific film identified by an id parameter.",
+      "Key Functions/Methods": [
+        {
+          "Name": "getFilms",
+          "Parameters": [
+            "ModelMap modelMap",
+            "@RequestParam(value = \"title\", defaultValue = \"ALL FILMS\") String filter"
+          ],
+          "Return Value": "String"
+        },
+        {
+          "Name": "getFilmDetails",
+          "Parameters": [
+            "ModelMap modelMap",
+            "@RequestParam(value = \"id\") Integer id"
+          ],
+          "Return Value": "String"
+        },
+        {
+          "Name": "filmService.getAllFilms()",
+          "Return Value": "List<Film>"
+        },
+        {
+          "Name": "filmService.getFilmsByTitle(title)",
+          "Parameters": [
+            "String title"
+          ],
+          "Return Value": "List<Film>"
+        },
+        {
+          "Name": "filmService.getFilmByID(id)",
+          "Parameters": [
+            "Integer id"
+          ],
+          "Return Value": "Film"
+        },
+        {
+          "Name": "filmService.getAvailableFilms()",
+          "Return Value": "List<Film>"
+        }
+      ],
+      "Complexity or Noteworthy Patterns": "This code uses Spring's @GetMapping annotation for handling HTTP GET requests, ModelMap for storing and transferring model attributes between controller methods and views, and RequestParam for processing request parameters. Additionally, it demonstrates the use of default parameter values in case no request param is provided."
+    },
+    {
+      "Overview": "The code provided is a part of a Spring Boot application, specifically two REST endpoints for a movie rental system. One endpoint (`rentFilm`) allows users to rent a movie by their ID, and the other endpoint (`getFilmDetails`) allows owners to view all films or filter them by title.",
+      "Functions/Methods": [
+        {
+          "Name": "rentFilm",
+          "Parameters": [
+            "ModelMap modelMap, Principal principal, @PathVariable('filmid') int filmid"
+          ],
+          "Return Value": "String"
+        },
+        {
+          "Name": "getFilmDetails",
+          "Parameters": [
+            "ModelMap modelMap, @RequestParam(value = 'title', defaultValue = 'ALL FILMS') String filter"
+          ],
+          "Return Value": "String"
+        },
+        {
+          "Name": "customerService.getCustomerByEmail",
+          "Parameters": [
+            "String name"
+          ],
+          "Return Value": "Customer"
+        },
+        {
+          "Name": "inventoryService.getAllInventory",
+          "Parameters": [],
+          "Return Value": "List<Inventory>"
+        },
+        {
+          "Name": "filmService.getFilmByID",
+          "Parameters": [
+            "int filmId"
+          ],
+          "Return Value": "Film"
+        },
+        {
+          "Name": "filmService.getAllFilms",
+          "Parameters": [],
+          "Return Value": "List<Film>"
+        },
+        {
+          "Name": "filmService.getFilmsByTitle",
+          "Parameters": [
+            "String title"
+          ],
+          "Return Value": "List<Film>"
+        },
+        {
+          "Name": "filmService.getAvailableFilmCount",
+          "Parameters": [
+            "int filmId"
+          ],
+          "Return Value": "Integer"
+        }
+      ],
+      "Complexity or Noteworthy Patterns": [
+        "The `rentFilm` function is performing a linear search for an inventory item with the provided film ID.",
+        "The use of Spring's ModelMap to pass attributes to views."
+      ]
+    },
+    {
+      "Overview": "This Java code appears to be a controller for managing films in an application, likely a web-based one. The main actions are adding, editing, and deleting films. It uses Spring MVC framework and ModelAndView object to handle view rendering.",
+      "Functions/Methods": [
+        {
+          "Name": "modelMap.addAttribute",
+          "Parameters": "[\"films\", films, \"filmCount\", filmCount, \"allFilms\", films]",
+          "Return Value": "None (used for setting attributes in ModelAndView)"
+        },
+        {
+          "Name": "@RequestMapping(\"/\")",
+          "Parameters": "[\"\", \"\"]",
+          "Return Value": "/owner/manage-films"
+        },
+        {
+          "Name": "@RequestMapping(\"/edit/{id}\")",
+          "Parameters": "[\"/edit\\/{id}\", name = \"id\", int id]",
+          "Return Value": "ModelAndView (new ModelAndView(\"/owner/edit-film\"), with film added as an object)"
+        },
+        {
+          "Name": "@RequestMapping(\"/delete/{id}\")",
+          "Parameters": "[\"/delete\\/{id}\", name = \"id\", int id]",
+          "Return Value": "\"redirect:/owner/manage-films\""
+        },
+        {
+          "Name": "filmService.getFilmByID(id)",
+          "Parameters": "[int id]",
+          "Return Value": "Film object"
+        },
+        {
+          "Name": "filmService.deleteFilmById(id)",
+          "Parameters": "[int id]",
+          "Return Value": "None (used for deleting a film)"
+        },
+        {
+          "Name": "findFilmByID(Integer id)",
+          "Parameters": "[Integer id]",
+          "Return Value": "Film object"
+        }
+      ],
+      "Complexity or noteworthy patterns": "The code uses Spring MVC's @RequestMapping annotation for handling HTTP requests, ModelAndView object for managing model data and selecting views, and PathVariable annotation for extracting path variables from the request URL. It also shows a simple CRUD (Create, Read, Update, Delete) pattern in managing films."
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\Customer.java",
+  "functions": [
+    {
+      "error": "Invalid JSON from model",
+      "raw_output": " Here is the analysis of the given Java code:\n\n```json\n{\n  \"Overview\": \"This code defines an Entity class named 'Customer' as part of a larger project using JPA (Java Persistence API). The Customer entity represents a record for customers in a database. It contains properties like customerId, firstName, lastName, email, active status, creation date, and update date.\",\n\n  \"Key Functions/Methods\": [\n    {\n      \"Name\": \"getCustomerId()\",\n      \"Parameters\": null,\n      \"Return Value\": \"int\"\n    },\n    {\n      \"Name\": \"setCustomerId(int customerId)\",\n      \"Parameters\": \"[int customerId]\",\n      \"Return Value\": null\n    },\n    {\n      \"Name\": \"getFirstName()\",\n      \"Parameters\": null,\n      \"Return Value\": \"String\"\n    },\n    {\n      \"Name\": \"setFirstName(String firstName)\",\n      \"Parameters\": \"[String firstName]\",\n      \"Return Value\": null\n    },\n    {\n      \"Name\": \"getLastName()\",\n      \"Parameters\": null,\n      \"Return Value\": \"String\"\n    },\n    {\n      \"Name\": \"setLastName(String lastName)\",\n      \"Parameters\": \"[String lastName]\",\n      \"Return Value\": null\n    },\n    {\n      \"Name\": \"getEmail()\",\n      \"Parameters\": null,\n      \"Return Value\": \"String\"\n    },\n    {\n      \"Name\": \"setEmail(String email)\",\n      \"Parameters\": \"[String email]\",\n      \"Return Value\": null\n    },\n    {\n      \"Name\": \"getActive()\",\n      \"Parameters\": null,\n      \"Return Value\": \"byte\"\n    },\n    {\n      \"Name\": \"setActive(byte active)\",\n      \"Parameters\": \"[byte active]\",\n      \"Return Value\": null\n    },\n    {\n      \"Name\": \"getCreateDate()\",\n      \"Parameters\": null,\n      \"Return Value\": \"Timestamp\"\n    },\n    {\n      \"Name\": \"setCreateDate(Timestamp createDate)\",\n      \"Parameters\": \"[Timestamp createDate]\",\n      \"Return Value\": null\n    },\n    {\n      \"Name\": \"getLastUpdate()\",\n      \"Parameters\": null,\n      \"Return Value\": \"Timestamp\"\n    },\n    {\n      \"Name\": \"setLastUpdate(Timestamp lastUpdate)\",\n      \"Parameters\": \"[Timestamp lastUpdate]\",\n      \"Return Value\": null\n    }\n  ],\n\n  \"Complexity or noteworthy patterns\": \"The code follows a simple pattern of getter and setter methods for each field in the class. The Customer entity is annotated as an Entity using JPA, which indicates that it represents a database table.\"\n}\n```"
+    },
+    {
+      "error": "Invalid JSON from model",
+      "raw_output": " Here is the analysis of the provided code:\n\n```json\n{\n  \"Overview\": \"This is a Java class named `Customer` which has two methods - `setLastUpdate` and overridden methods for `equals` and `hashCode`. The `Customer` class seems to represent a customer entity with properties such as `customerId`, `firstName`, `lastName`, `email`, `active`, `createDate`, and `lastUpdate`.\",\n\n  \"Key Functions/Methods\": [\n    {\n      \"Name\": \"setLastUpdate\",\n      \"Parameters\": [\"Timestamp lastUpdate\"],\n      \"Return Value\": \"void\"\n    },\n    {\n      \"Name\": \"equals\",\n      \"Parameters\": [\"Object o\"],\n      \"Return Value\": \"boolean\"\n    },\n    {\n      \"Name\": \"hashCode\",\n      \"Parameters\": [\"None\"],\n      \"Return Value\": \"int\"\n    }\n  ],\n\n  \"Complexity or noteworthy patterns\": [\n    \"The `equals` method checks for equality of all instance variables including the `customerId`, `firstName`, `lastName`, `email`, `active`, `createDate`, and `lastUpdate`.\",\n    \"The `hashCode` method uses `Objects.hash()` to generate a hash code from the values of all instance variables.\",\n    \"Note that for comparing objects, it is essential to override the `equals` and `hashCode` methods as per the Java documentation.\"\n  ]\n}\n```"
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\FilmActor.java",
+  "functions": [
+    {
+      "Overview": "This Java code defines a class named `FilmActor` which is annotated as an Entity representing the 'film_actor' table in a SQL database schema named 'sakila'. The `FilmActor` class has three properties: actorId, filmId, and lastUpdate. It also overrides the equals() and hashCode() methods for proper comparison.",
+      "Key Functions/Methods": [
+        {
+          "Name": "getActorId",
+          "Parameters": null,
+          "Return Value": "int"
+        },
+        {
+          "Name": "setActorId",
+          "Parameters": "(int actorId)",
+          "Return Value": "none"
+        },
+        {
+          "Name": "getFilmId",
+          "Parameters": null,
+          "Return Value": "int"
+        },
+        {
+          "Name": "setFilmId",
+          "Parameters": "(int filmId)",
+          "Return Value": "none"
+        },
+        {
+          "Name": "getLastUpdate",
+          "Parameters": null,
+          "Return Value": "Timestamp"
+        },
+        {
+          "Name": "setLastUpdate",
+          "Parameters": "(Timestamp lastUpdate)",
+          "Return Value": "none"
+        },
+        {
+          "Name": "equals",
+          "Parameters": "(Object o)",
+          "Return Value": "boolean"
+        },
+        {
+          "Name": "hashCode",
+          "Parameters": null,
+          "Return Value": "int"
+        }
+      ],
+      "Complexity or Noteworthy Patterns": "This code is relatively simple with no complex patterns. It uses Java's built-in data types (integer and timestamp) and basic getter/setter methods for its properties, along with the equals() and hashCode() methods to support proper comparison and hashing."
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\FilmActorPK.java",
+  "functions": [
+    {
+      "Overview": "This Java class named `FilmActorPK` is an implementation of the Serializable interface. It represents a composite primary key for the association between the `film_actor` table in a database schema, presumably for the Sakila Project. The class has two private instance variables: `actorId` and `filmId`. It provides getter and setter methods for both variables, which are also annotated as Id and mapped to columns with the same names in the database. Additionally, it overrides the `equals()` and `hashCode()` methods to compare the equality of two FilmActorPK objects based on their actorId and filmId values.",
+      "Key Functions/Methods": [
+        {
+          "Name": "equals",
+          "Parameters": [
+            "Object o"
+          ],
+          "Return Value": "boolean"
+        },
+        {
+          "Name": "hashCode",
+          "Parameters": [],
+          "Return Value": "int"
+        },
+        {
+          "Name": "getActorId",
+          "Parameters": [],
+          "Return Value": "Integer"
+        },
+        {
+          "Name": "setActorId",
+          "Parameters": [
+            "int actorId"
+          ],
+          "Return Value": "None (Void)"
+        },
+        {
+          "Name": "getFilmId",
+          "Parameters": [],
+          "Return Value": "int"
+        },
+        {
+          "Name": "setFilmId",
+          "Parameters": [
+            "int filmId"
+          ],
+          "Return Value": "None (Void)"
+        }
+      ],
+      "Complexity or Noteworthy Patterns": "The class follows common Java practices for representing a composite primary key and implementing the equals() and hashCode() methods. It adheres to standard naming conventions for getters, setters, and private instance variables."
+    }
+  ]
+},
+{
+  "filename": "sakila_proj\\SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\FilmCategory.java",
+  "functions": [
+    {
+      "error": "Invalid JSON from model",
+      "raw_output": " The code is a Java class named `FilmCategory` which represents an entity for the 'film_category' table in a database schema called \"sakila\". This class is part of the Sakila project and is annotated as an Entity with the @Entity annotation. It has three fields: filmId, categoryId, and lastUpdate.\n\n   Key functions/methods are:\n   1. `getFilmId()`: Returns the value of the 'film_id' field.\n   2. `setFilmId(Integer filmId)`: Sets the value of the 'film_id' field.\n   3. `getCategoryId()`: Returns the value of the 'category_id' field.\n   4. `setCategoryId(Integer categoryId)`: Sets the value of the 'category_id' field.\n   5. `getLastUpdate()`: Returns the value of the 'last_update' field.\n   6. `setLastUpdate(Timestamp lastUpdate)`: Sets the value of the 'last_update' field.\n   7. `equals(Object o)`: Compares this object with another one to check if they are equal based on their filmId, categoryId and lastUpdate fields.\n   8. `hashCode()`: Returns a hash code for this object based on its filmId, categoryId, and lastUpdate fields.\n\n   Complexity or noteworthy patterns include the use of annotations such as @Entity, @Table, @IdClass, @Column, and @Id to define the mapping of the class to a database table and its fields to table columns. Additionally, the FilmCategory class is using the Objects class from the java.util package for comparison and hashing operations, which provides more efficient implementations of these methods."
+    }
+  ]
+},
